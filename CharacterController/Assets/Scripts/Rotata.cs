@@ -10,12 +10,12 @@ public class Rotata : MonoBehaviour {
 
 		ControllerScript cs = other.GetComponent<ControllerScript> ();
 
-		camera cam = Camera.main.GetComponent<camera> ();
+	
 
 
 		cs.ChangeAngle = true;
 
-		cam.ChangeAngle = true;
+
 
 
 		}

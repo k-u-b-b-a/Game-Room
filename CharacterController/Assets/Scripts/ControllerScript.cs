@@ -5,18 +5,18 @@ public class ControllerScript : MonoBehaviour {
 
 	public bool ChangeAngle;
 
-	public float Angle;
+
 
 	float angle = 0f;
 
 	public float maxSpeed;
 
-	bool facingRight = true;
+
 
 	bool moveRight = true;
 
 	Animator anim;
-	float epsilon = 0.01f;
+	float epsilon = 0.1f;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +27,7 @@ public class ControllerScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 
 
 		if (Input.GetKey(KeyCode.LeftArrow)) {
@@ -91,4 +91,6 @@ public class ControllerScript : MonoBehaviour {
 
 
 }
-
+//-1.562756
+//-1.361514
+//-1.359824
