@@ -16,13 +16,15 @@ public class ControllerScript : MonoBehaviour {
 	bool moveRight = true;
 
 	Animator anim;
-	float epsilon = 0.1f;
+	float epsilon = 0.01f;
 
 	// Use this for initialization
 	void Start () {
 
 		anim = GetComponent<Animator> ();
 		ChangeAngle = false;
+
+
 	
 	}
 	
@@ -50,11 +52,11 @@ public class ControllerScript : MonoBehaviour {
 		
 						if (Mathf.Abs (rigidbody2D.rotation - 0) < epsilon) {
 								rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
-						} else if (Mathf.Abs (rigidbody2D.rotation - 90) < epsilon) {
+						} else if (Mathf.Abs (rigidbody2D.rotation - 90) < epsilon || Mathf.Abs(rigidbody2D.rotation + 270) < epsilon) {
 								rigidbody2D.velocity = new Vector2 (0, move * maxSpeed);
-						} else if (Mathf.Abs (rigidbody2D.rotation - 180) < epsilon) {
+						} else if (Mathf.Abs (rigidbody2D.rotation - 180) < epsilon || Mathf.Abs(rigidbody2D.rotation + 180) < epsilon) {
 								rigidbody2D.velocity = new Vector2 (-move * maxSpeed, -rigidbody2D.velocity.y);
-						} else if (Mathf.Abs (rigidbody2D.rotation - 270) < epsilon) {
+						} else if (Mathf.Abs (rigidbody2D.rotation - 270) < epsilon || Mathf.Abs(rigidbody2D.rotation + 90) < epsilon) {
 								rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.y, -move * maxSpeed);
 						} else if (Mathf.Abs (rigidbody2D.rotation - 360) < epsilon) {
 								rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
@@ -81,6 +83,8 @@ public class ControllerScript : MonoBehaviour {
 					
 		}
 
+		Debug.Log (rigidbody2D.rotation);
+
 
 	
 	}
@@ -91,6 +95,4 @@ public class ControllerScript : MonoBehaviour {
 
 
 }
-//-1.562756
-//-1.361514
-//-1.359824
+//else if (Mathf.Abs (ridigbody2D.rotation - 180) < epsilon || Mathf.Abs(rigidbody2D.rotation + 360) < epsilon)
