@@ -55,9 +55,9 @@ public class ControllerScript : MonoBehaviour {
 						} else if (Mathf.Abs (rigidbody2D.rotation - 90) < epsilon || Mathf.Abs(rigidbody2D.rotation + 270) < epsilon) {
 								rigidbody2D.velocity = new Vector2 (0, move * maxSpeed);
 						} else if (Mathf.Abs (rigidbody2D.rotation - 180) < epsilon || Mathf.Abs(rigidbody2D.rotation + 180) < epsilon) {
-								rigidbody2D.velocity = new Vector2 (-move * maxSpeed, -rigidbody2D.velocity.y);
+								rigidbody2D.velocity = new Vector2 (-move * maxSpeed, 0);
 						} else if (Mathf.Abs (rigidbody2D.rotation - 270) < epsilon || Mathf.Abs(rigidbody2D.rotation + 90) < epsilon) {
-								rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.y, -move * maxSpeed);
+								rigidbody2D.velocity = new Vector2 (0, -move * maxSpeed);
 						} else if (Mathf.Abs (rigidbody2D.rotation - 360) < epsilon) {
 								rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
 						} 
@@ -67,6 +67,7 @@ public class ControllerScript : MonoBehaviour {
 
 		if (moveRight == false) {
 			maxSpeed = 0f;
+			rigidbody2D.velocity = new Vector2 (0 , 0);
 	
 				}
 
@@ -83,7 +84,8 @@ public class ControllerScript : MonoBehaviour {
 					
 		}
 
-		Debug.Log (rigidbody2D.rotation);
+		Debug.Log (rigidbody2D.velocity);
+
 
 
 	
