@@ -40,7 +40,7 @@ public class ControllerScript : MonoBehaviour {
 		}
 		
 		if (moveRight == true) {
-						maxSpeed = 3f;
+						maxSpeed = 2.5f;
 		
 
 	
