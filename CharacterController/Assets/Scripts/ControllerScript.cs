@@ -58,7 +58,7 @@ public class ControllerScript : MonoBehaviour {
 								rigidbody2D.velocity = new Vector2 (-move * maxSpeed, 0);
 						} else if (Mathf.Abs (rigidbody2D.rotation - 270) < epsilon || Mathf.Abs(rigidbody2D.rotation + 90) < epsilon) {
 								rigidbody2D.velocity = new Vector2 (0, -move * maxSpeed);
-						} else if (Mathf.Abs (rigidbody2D.rotation - 360) < epsilon) {
+						} else if (Mathf.Abs (rigidbody2D.rotation - 360) < epsilon || Mathf.Abs(rigidbody2D.rotation + 360)< epsilon) {
 								rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
 						} 
 		}
@@ -84,7 +84,7 @@ public class ControllerScript : MonoBehaviour {
 					
 		}
 
-		Debug.Log (rigidbody2D.velocity);
+		Debug.Log (rigidbody2D.rotation);
 
 
 
