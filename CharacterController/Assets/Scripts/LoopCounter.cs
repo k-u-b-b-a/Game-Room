@@ -50,15 +50,15 @@ public class LoopCounter : MonoBehaviour {
 		squareFrame_5.SetActive (false);
 
 
-		if (myTimer >= 3.0f) {
-			black.SetActive	(true);
+		if (myTimer >= 3.1f) {
+			black.SetActive (true);
 			Time.timeScale  = 0;}
 
 
 
 		if (Loop_Counter == 1) {
 			smile.SetActive (true);
-			myTimer += Time.deltaTime;
+
 
 
 			
@@ -100,6 +100,7 @@ public class LoopCounter : MonoBehaviour {
 			squareFrame_5.SetActive(true);
 			
 		}if (Loop_Counter == 9) {
+			myTimer += Time.deltaTime;
 				
 				} 
 			
